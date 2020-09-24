@@ -11,3 +11,4 @@ async-graphql = "2.0.0-alpha.7"
 async-graphql-actix-web = "2.0.0-alpha.7"
 #slab = "0.4.2"
 serde_json = "*"
+sqlx = { git = "https://github.com/launchbadge/sqlx", default-features = false, features = ["runtime-tokio", "sqlite"] }
