@@ -10,7 +10,7 @@ GraphQL isn't tied(绑定) to any specific database or store engine
 
 Query部分可以理解为CRUD的R，Mutation则包括对数据的增删改，Subscription一般通过WebSocket实现数据发生变动后推送给订阅的客户端(LiveData)
 
-use async_graphql::Object之后就会包含Object和field两个过程宏
+use async_graphql::Object之后就会包含Object和field两个过程宏(filed过程宏在2.0版本已被删除?，改名为#[graphql])
 
 ---
 

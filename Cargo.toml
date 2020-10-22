@@ -6,11 +6,8 @@ edition = "2018"
 
 
 [dependencies]
-actix-web = "*"
-async-graphql = "*"
-#async-graphql-actix-web = "2.0.0-alpha.7"
-#slab = "0.4.2"
-serde_json = "*"
-#async-std = { version="*", features=["attributes"] }
-sqlx = { git = "https://github.com/launchbadge/sqlx", default-features = false, features = ["runtime-tokio", "sqlite"] }
-#sqlx = { git = "https://github.com/launchbadge/sqlx", default-features = false, features = ["runtime-async-std", "sqlite"] }
+tokio = { version = "0.2", features = ["macros", "rt-threaded", "sync"] }
+warp = "0.2.5"
+async-graphql = "2.0.7"
+async-graphql-warp = "2.0.7"
+#futures = "0.3.6"

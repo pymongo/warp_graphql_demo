@@ -1,7 +1,6 @@
 .idea
-.config/config.toml
 /target
 Cargo.lock
-db.sqlite
-db.sqlite-shm
-db.sqlite-wal
+#db.sqlite
+#db.sqlite-shm
+#db.sqlite-wal
