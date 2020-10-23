@@ -7,7 +7,7 @@ edition = "2018"
 
 [dependencies]
 tokio = { version = "0.2", features = ["macros", "rt-threaded", "sync"] }
-warp = "0.2.5"
-async-graphql = "2.0.7"
-async-graphql-warp = "2.0.7"
-#futures = "0.3.6"
+warp = "0.2"
+async-graphql = "2.0"
+async-graphql-warp = "2.0"
+futures = "0.3"
