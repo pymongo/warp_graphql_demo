@@ -11,3 +11,8 @@ warp = "0.2"
 async-graphql = "2.0"
 async-graphql-warp = "2.0"
 futures = "0.3"
+
+# logger utils
+log = "0.4"
+log-panics = { version = "2.0.0", features = ["with-backtrace"] }
+simplelog = "0.8"

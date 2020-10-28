@@ -31,9 +31,19 @@ Request和Response的消息格式都是: Content-Type: application/json
 
 Request会用POST请求将json数据携带在payload中: `{query: "{hello}", variables: null}`
 
-### warp路由
+### warp graphql路由
 
 一定要先写playground再or post，`graphql_post.or(graphql_playground)`这种写法连playground页面都进不了
+
+## Graphql携带变量
+
+> curl -X POST -H "Content-Type: application/json" -d '{"query": "query($a: Int!){add(a:$a,b:1)}", "variables": {"a": 1}}' http://localhost:8003
+
+如果没有变量，可以将`query{add(a:1,b:1)}`省去外层的query(因为默认就当做是query?)
+
+如果携带了变量，一定要在query内定义好变量名和类型，例如`query{add()}``
+
+前端payload如果定义了变量但是没有使用就会报错variables is not used，如果没有定义变量但是payload的variables字段多传了变量参数则没有问题
 
 ---
 

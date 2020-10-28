@@ -65,14 +65,28 @@ struct User {
 //     }
 // }
 
+fn init_logger() {
+    let logger_config = simplelog::ConfigBuilder::new()
+        .set_time_to_local(true)
+        .build();
+    simplelog::TermLogger::init(
+        simplelog::LevelFilter::Info,
+        logger_config,
+        simplelog::TerminalMode::Mixed,
+    ).unwrap();
+    log_panics::init();
+}
+
 #[tokio::main]
 async fn main() -> DynError {
+    init_logger();
     // let data = Arc::new(Mutex::new(profile_data));
     let schema = Schema::build(
         QueryRoot,
         EmptyMutation,
         EmptySubscription,
     )
+        .extension(async_graphql::extensions::Logger)
     // .data(data)
     .finish();
 
@@ -105,7 +119,6 @@ async fn main() -> DynError {
             ))
         });
 
-    println!("http://localhost:8003");
     warp::serve(routes).run(([0, 0, 0, 0], 8003)).await;
 
     Ok(())
